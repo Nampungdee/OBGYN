@@ -1,66 +1,66 @@
 <!DOCTYPE html>
-<html lang="th">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ระบบเช็คอิน</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      body {
-        background: linear-gradient(to bottom right, #fff0f5, #ffffff);
-        font-family: "Prompt", sans-serif;
-      }
-    </style>
-  </head>
-  <body class="min-h-screen flex items-center justify-center p-4">
-    <div class="w-full max-w-md bg-white/90 backdrop-blur-lg rounded-2xl shadow-lg p-6 space-y-6">
-      
-      <!-- Header -->
-      <div class="text-center">
-        <h1 class="text-2xl font-bold text-pink-600">บันทึกการเช็คอิน</h1>
-        <p class="text-sm text-gray-500">โปรดกรอกข้อมูลเพื่อลงเวลา</p>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>บันทึกการเข้างาน</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+</head>
+
+<body class="bg-white h-screen">
+  <div class="max-w-md mx-auto p-6">
+    <!-- ส่วน HTML ด้านบนเหมือนเดิม -->
+    <div class="bg-slate-800 border rounded-lg text-white text-center mb-4 py-8 px-4">
+      <div class="daytime">
+        <div id="date"></div>
+        <div class="text-5xl font-bold" id="time"></div>
+        <input type="date" id="todayInput" name="todayInput" class="hidden" /><input type="time" id="currentTime"
+          name="currentTime" class="hidden" />
       </div>
-
-      <!-- Step 1: ฟอร์ม -->
-      <div class="space-y-4">
-        <div>
-          <label class="block text-sm font-medium text-gray-700">ชื่อ-นามสกุล</label>
-          <input type="text" class="w-full px-3 py-2 mt-1 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-300" placeholder="กรอกชื่อ-นามสกุล" />
-        </div>
-
-        <div>
-          <label class="block text-sm font-medium text-gray-700">รหัส นสพ.</label>
-          <input type="text" class="w-full px-3 py-2 mt-1 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-300" placeholder="เช่น 123456" />
-        </div>
-
-        <div>
-          <label class="block text-sm font-medium text-gray-700">ชั้นปี</label>
-          <select class="w-full px-3 py-2 mt-1 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-300">
-            <option>ปี 1</option>
-            <option>ปี 2</option>
-            <option>ปี 3</option>
-            <option>ปี 4</option>
-          </select>
-        </div>
-
-        <div>
-          <label class="block text-sm font-medium text-gray-700">หมายเหตุ</label>
-          <textarea class="w-full px-3 py-2 mt-1 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-300" rows="3"></textarea>
-        </div>
-      </div>
-
-      <!-- ปุ่ม -->
-      <div class="pt-4">
-        <button class="w-full py-3 rounded-xl bg-gradient-to-r from-pink-500 to-pink-400 text-white font-semibold shadow-md hover:opacity-90 transition">
-          ต่อไป
-        </button>
-      </div>
-
-      <!-- Footer -->
-      <p class="text-xs text-gray-400 text-center">© 2025 ระบบเช็คอิน</p>
     </div>
-  </body>
-</html>
+    <div id="step1">
+      <div class="relative bg-slate-100 p-4 rounded-lg">
+        <div id="loadingOverlay"
+          class="hidden absolute top-0 left-0 w-full h-full bg-white/80 flex items-center justify-center z-[1000]">
+          <div class="text-center text-gray-800">ค้นหารายชื่อ..</div>
+        </div>
+        <div class="w-full p-2 space-y-6">
+          <div class="relative">
+            <label for="columnBData"
+              class="absolute -top-2 left-3 text-xs bg-slate-100 px-1 text-slate-800 font-semibold">ชื่อ-นามสกุล</label><input
+              type="text" class="w-full px-4 py-3 text-sm bg-slate-100 border-2 border-slate-800 rounded-xl"
+              id="columnBData" name="columnBData" required />
+          </div>
+        </div>
+        <div class="w-full p-2 space-y-6">
+          <div class="relative">
+            <label for="columnCData"
+              class="absolute -top-2 left-3 text-xs bg-slate-100 px-1 text-slate-800 font-semibold">รหัส นสพ.</label><input
+              type="text" class="w-full px-4 py-3 text-sm bg-slate-100 border-2 border-slate-800 rounded-xl"
+              id="columnCData" name="columnCData" required />
+          </div>
+        </div>
+        <div class="w-full p-2 space-y-6">
+          <div class="relative">
+            <label for="columnDData"
+              class="absolute -top-2 left-3 text-xs bg-slate-100 px-1 text-slate-800 font-semibold">ชั้นปี</label><input
+              type="text" class="w-full px-4 py-3 text-sm bg-slate-100 border-2 border-slate-800 rounded-xl"
+              id="columnDData" name="columnDData" required />
+          </div>
+        </div>
+        <input type="hidden" id="userId" name="userId" /><input type="hidden" id="columnAData" name="columnAData" />
+      </div>
+
+      <input type="hidden" id="jobInput" name="jobInput" required /><textarea
+        class="w-full border border-gray-300 rounded-lg p-4 text-gray-700" placeholder="    " id="noteInput"></textarea>
+      <div class="bg-slate-800 text-white text-center rounded-lg my-4">
+        <button class="p-4 w-full" onclick="nextStep()">ถัดไป</button>
+      </div>
+    </div>
     <!-- ส่วน HTML ที่เหลือ (Step 2, Step 3) เหมือนเดิม -->
     <div id="step2" class="hidden text-center">
       <div class="photo pb-4">
