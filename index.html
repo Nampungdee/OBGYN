@@ -5,22 +5,24 @@
   body {
     font-family: 'Kanit', sans-serif;
     background: linear-gradient(to bottom right, #ffffff, #e6f7ff, #cceeff);
-    color: #333;
+    color: #333333; /* ข้อความทั่วไปสีเข้ม อ่านง่าย */
   }
 
   /* การ์ดพื้นหลัง */
   .bg-slate-800 {
-    background: linear-gradient(135deg, #4da6ff, #66ccff) !important;
+    background: linear-gradient(135deg, #3399ff, #66ccff) !important;
+    color: #ffffff !important;
   }
   .bg-slate-100 {
-    background: #f0f9ff !important;
+    background: #f9fcff !important;
   }
 
-  /* ปุ่มหลัก */
+  /* ปุ่ม */
   button {
     transition: all 0.3s ease;
     border-radius: 1rem !important;
     font-weight: 600;
+    color: #ffffff !important; /* ตัวหนังสือในปุ่มเป็นสีขาวเสมอ */
   }
   button:hover {
     transform: translateY(-2px);
@@ -29,40 +31,40 @@
 
   /* ปุ่มหลักสีฟ้า */
   .bg-slate-800 {
-    background: linear-gradient(135deg, #3399ff, #66ccff) !important;
-    color: white !important;
+    background: linear-gradient(135deg, #0077cc, #3399ff) !important;
   }
 
   /* ปุ่มถ่ายรูป */
   .bg-green-500 {
-    background: linear-gradient(135deg, #66ccff, #99ddff) !important;
-    color: #fff !important;
+    background: linear-gradient(135deg, #00bfff, #66ccff) !important;
   }
 
   /* ปุ่มรอง */
   .bg-gray-300 {
     background: #e6f7ff !important;
-    color: #444 !important;
+    color: #0066cc !important;
+    font-weight: 600;
   }
 
   /* input */
   input, textarea {
     border-radius: 1rem !important;
-    border: 2px solid #66ccff !important;
+    border: 2px solid #3399ff !important;
     background: #ffffff !important;
+    color: #333333 !important; /* ข้อความที่พิมพ์ชัดเจน */
   }
 
+  /* label */
   label {
-    color: #3399ff !important;
+    color: #0066cc !important;
     font-weight: 600;
   }
 
   /* ข้อความหัวข้อ */
-  h2, .text-5xl, .font-bold {
-    color: #3399ff !important;
+  h1, h2, h3, .text-5xl, .font-bold {
+    color: #0077cc !important; /* ฟ้าเข้ม เด่น */
   }
 </style>
-
 
 <head>
   <meta charset="UTF-8" />
