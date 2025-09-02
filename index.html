@@ -4,17 +4,20 @@
 <style>
   body {
     font-family: 'Kanit', sans-serif;
-    background: linear-gradient(to bottom right, #ffffff, #e6f7ff, #cceeff);
-    color: #333333; /* ข้อความทั่วไปสีเข้ม อ่านง่าย */
+    background: linear-gradient(to bottom right, #1a237e, #283593, #3949ab); /* ไล่น้ำเงิน */
+    color: #ffffff; /* ตัวหนังสือเป็นสีขาวทั้งหมด */
   }
 
-  /* การ์ดพื้นหลัง */
+  /* การ์ด */
   .bg-slate-800 {
-    background: linear-gradient(135deg, #3399ff, #66ccff) !important;
+    background: linear-gradient(135deg, #0d47a1, #1565c0) !important;
     color: #ffffff !important;
+    border-radius: 1.5rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
   }
   .bg-slate-100 {
-    background: #f9fcff !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: #ffffff !important;
   }
 
   /* ปุ่ม */
@@ -22,49 +25,54 @@
     transition: all 0.3s ease;
     border-radius: 1rem !important;
     font-weight: 600;
-    color: #ffffff !important; /* ตัวหนังสือในปุ่มเป็นสีขาวเสมอ */
+    color: #ffffff !important; /* ตัวหนังสือสีขาว */
   }
   button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(102, 204, 255, 0.4);
+    box-shadow: 0 6px 15px rgba(21, 101, 192, 0.5);
   }
 
-  /* ปุ่มหลักสีฟ้า */
+  /* ปุ่มหลัก */
   .bg-slate-800 {
-    background: linear-gradient(135deg, #0077cc, #3399ff) !important;
+    background: linear-gradient(135deg, #0d47a1, #1976d2) !important;
   }
 
   /* ปุ่มถ่ายรูป */
   .bg-green-500 {
-    background: linear-gradient(135deg, #00bfff, #66ccff) !important;
+    background: linear-gradient(135deg, #1565c0, #42a5f5) !important;
   }
 
   /* ปุ่มรอง */
   .bg-gray-300 {
-    background: #e6f7ff !important;
-    color: #0066cc !important;
+    background: rgba(255,255,255,0.2) !important;
+    color: #ffffff !important;
     font-weight: 600;
   }
 
-  /* input */
+  /* input & textarea */
   input, textarea {
     border-radius: 1rem !important;
-    border: 2px solid #3399ff !important;
-    background: #ffffff !important;
-    color: #333333 !important; /* ข้อความที่พิมพ์ชัดเจน */
+    border: 2px solid #42a5f5 !important;
+    background: rgba(255,255,255,0.1) !important;
+    color: #ffffff !important;
+    padding: 0.6rem;
+  }
+  input::placeholder, textarea::placeholder {
+    color: #bbdefb !important; /* ตัวอักษร placeholder น้ำเงินอ่อน */
   }
 
   /* label */
   label {
-    color: #0066cc !important;
+    color: #bbdefb !important;
     font-weight: 600;
   }
 
-  /* ข้อความหัวข้อ */
+  /* หัวข้อ */
   h1, h2, h3, .text-5xl, .font-bold {
-    color: #0077cc !important; /* ฟ้าเข้ม เด่น */
+    color: #ffffff !important;
   }
 </style>
+
 
 <head>
   <meta charset="UTF-8" />
