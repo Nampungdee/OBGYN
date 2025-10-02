@@ -1,76 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
-<style>
-  body {
-    font-family: 'Kanit', sans-serif;
-    background: linear-gradient(to bottom right, #1a237e, #283593, #3949ab); /* ไล่น้ำเงิน */
-    color: #ffffff; /* ตัวหนังสือเป็นสีขาวทั้งหมด */
-  }
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+      background: linear-gradient(135deg, #e6f7ec, #c8eacb, #aee1b8);
+      color: #2d2d2d;
+      margin: 0;
+      padding: 0;
+    }
 
-  /* การ์ด */
-  .bg-slate-800 {
-    background: linear-gradient(135deg, #0d47a1, #1565c0) !important;
-    color: #ffffff !important;
-    border-radius: 1.5rem;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-  }
-  .bg-slate-100 {
-    background: rgba(255, 255, 255, 0.05) !important;
-    color: #ffffff !important;
-  }
+    /* กล่องแสดงผล */
+    .box {
+      background: #ffffffcc;
+      border-radius: 12px;
+      padding: 16px;
+      margin: 12px 0;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    }
 
-  /* ปุ่ม */
-  button {
-    transition: all 0.3s ease;
-    border-radius: 1rem !important;
-    font-weight: 600;
-    color: #ffffff !important; /* ตัวหนังสือสีขาว */
-  }
-  button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(21, 101, 192, 0.5);
-  }
+    /* ปุ่มหลัก */
+    button, #submitButton {
+      background: linear-gradient(135deg, #6fcf97, #56ab2f);
+      color: white;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      padding: 12px 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
 
-  /* ปุ่มหลัก */
-  .bg-slate-800 {
-    background: linear-gradient(135deg, #0d47a1, #1976d2) !important;
-  }
+    button:hover, #submitButton:hover {
+      background: linear-gradient(135deg, #56ab2f, #3d8b3d);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+    }
 
-  /* ปุ่มถ่ายรูป */
-  .bg-green-500 {
-    background: linear-gradient(135deg, #1565c0, #42a5f5) !important;
-  }
+    button:disabled, #submitButton:disabled {
+      background: #cbd5c0;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
 
-  /* ปุ่มรอง */
-  .bg-gray-300 {
-    background: rgba(255,255,255,0.2) !important;
-    color: #ffffff !important;
-    font-weight: 600;
-  }
+    /* ข้อความหัวข้อ */
+    h1, h2, h3, .title {
+      font-family: 'Kanit', sans-serif;
+      font-weight: 600;
+      color: #2f4f2f;
+    }
 
-  /* input & textarea */
-  input, textarea {
-    border-radius: 1rem !important;
-    border: 2px solid #42a5f5 !important;
-    background: rgba(255,255,255,0.1) !important;
-    color: #ffffff !important;
-    padding: 0.6rem;
-  }
-  input::placeholder, textarea::placeholder {
-    color: #bbdefb !important; /* ตัวอักษร placeholder น้ำเงินอ่อน */
-  }
-
-  /* label */
-  label {
-    color: #bbdefb !important;
-    font-weight: 600;
-  }
-
-  /* หัวข้อ */
-  h1, h2, h3, .text-5xl, .font-bold {
-    color: #ffffff !important;
-  }
+    /* ข้อความทั่วไป */
+    p, span, label, .text {
+      font-family: 'Kanit', sans-serif;
+      font-size: 0.95rem;
+      color: #2d2d2d;
+    }
 </style>
 
 
